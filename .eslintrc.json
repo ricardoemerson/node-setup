@@ -1,0 +1,83 @@
+{
+  "env": {
+    "es2020": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "eslint-plugin-import-helpers"
+  ],
+  "rules": {
+    "arrow-parens": ["error", "as-needed"],
+    "class-methods-use-this": "off",
+    "import/prefer-default-export": "off",
+    "import/extensions": ["error", "ignorePackages", { "ts": "never" }],
+    "lines-between-class-membesrs": "off",
+    "max-classes-per-file": "off",
+    "max-len": ["error", { "code": 120 }],
+    "no-console": "off",
+    "no-new": "off",
+    "no-prototype-builtins": "off",
+    "no-restricted-syntax": "off",
+    "no-useless-constructor": "off",
+    "no-underscore-dangle": "off",
+    "no-unused-expressions": "off",
+    "object-curly-spacing": ["error", "always"],
+    "object-curly-newline": ["error", {
+      "ObjectExpression": { "multiline": true, "minProperties": 5 },
+      "ObjectPattern": { "multiline": true, "minProperties": 5 },
+      "ImportDeclaration": { "multiline": true, "minProperties": 5 },
+      "ExportDeclaration": { "multiline": true, "minProperties": 5 }
+    }],
+    "semi": "off",
+    "template-curly-spacing": ["error", "always"],
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/explicit-function-return-type": ["off"],
+    "@typescript-eslint/explicit-module-boundary-types": ["warn", { "allowArgumentsExplicitlyTypedAsAny": true }],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "interface",
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "^I[A-Z]",
+          "match": true
+        }
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-use-before-define": ["error", { "variables": false }],
+    "@typescript-eslint/semi": ["error"],
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "_" }],
+
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always", // new line between groups
+        "groups": [
+          "module",
+          "/^@/",
+          "/^@config/",
+          "/^@controllers/",
+          "/^@erros/",
+          "/^@models/",
+          "/^@repositories/",
+          "/^@services/",
+          "/^@shared/",
+          ["parent", "sibling", "index"]
+        ],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ]
+  }
+}
