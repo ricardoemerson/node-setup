@@ -8,6 +8,10 @@
     "airbnb-base",
     "plugin:@typescript-eslint/recommended"
   ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 11,
@@ -79,5 +83,10 @@
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
   }
 }
